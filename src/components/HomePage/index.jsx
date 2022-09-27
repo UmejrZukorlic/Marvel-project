@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Layout from "../Layout/layout";
 const HomePage = () => {
   const [data, setData] = useState();
 
@@ -13,7 +14,11 @@ const HomePage = () => {
         setData(respone.data.items);
       });
   }, []);
-  return <div>HomePage</div>;
+  return (
+    <Layout>
+      <div>Home Page</div>
+    </Layout>
+  );
 };
 
 export default HomePage;
