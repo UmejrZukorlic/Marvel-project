@@ -1,0 +1,7 @@
+.homeSection {
+  width: 90%;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  row-gap: 10px;
+}
