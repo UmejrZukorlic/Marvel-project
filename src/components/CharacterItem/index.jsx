@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { MarvelContext } from "../contex";
 import "./characterItem.css";
 const CharacterItem = (props) => {
+  const { setId } = useContext(MarvelContext);
   const { thumbnail, name, id } = props;
   return (
     <div className="card">
       <img src={thumbnail} alt="slike" />
       <p className="name">{name}</p>
       <Link to={"/article"}>
-        <p className="seeMore">See more</p>
+        <p
+          className="seeMore"
+          onClick={() => {
+            setId(id);
+          }}>
+          See more
+        </p>
       </Link>
     </div>
   );
