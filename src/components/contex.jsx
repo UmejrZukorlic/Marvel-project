@@ -1,16 +1,19 @@
 import React, { createContext } from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const MarvelContext = createContext();
 export { MarvelContext };
 const Context = (props) => {
-  const [id, setId] = useState();
+  const [url, setUrl] = useState();
+  const apiKey =
+    "?ts=1&apikey=99a2c3abc5ca3fc0c9dca3d0cd75df4b&hash=4326bf879c56ff7c5240414e2ccd8e29";
 
   return (
     <MarvelContext.Provider
       value={{
-        id,
-        setId,
+        url,
+        setUrl,
+        apiKey,
       }}>
       {props.children}
     </MarvelContext.Provider>

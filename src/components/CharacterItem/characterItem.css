@@ -17,11 +17,13 @@
   margin: 0;
   padding: 2px;
 
-  background-color: white;
+  background-color: rgba(254, 67, 67, 0.37);
+
   border: 2px black solid;
   transition: 0.2s;
 }
 .card .name {
+  background-color: white;
   transform: skew(10deg);
 }
 .seeMore {

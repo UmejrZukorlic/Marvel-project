@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { MarvelContext } from "../contex";
 import "./characterItem.css";
 const CharacterItem = (props) => {
-  const { setId } = useContext(MarvelContext);
-  const { thumbnail, name, id } = props;
+  const { setUrl } = useContext(MarvelContext);
+  const { thumbnail, name, url } = props;
   return (
     <div className="card">
       <img src={thumbnail} alt="slike" />
@@ -13,7 +13,7 @@ const CharacterItem = (props) => {
         <p
           className="seeMore"
           onClick={() => {
-            setId(id);
+            setUrl(url);
           }}>
           See more
         </p>

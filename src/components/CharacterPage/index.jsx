@@ -6,21 +6,30 @@ import { MarvelContext } from "../contex";
 
 const CharacterPage = () => {
   const [data, setData] = useState();
-  const { id, setId } = useContext(MarvelContext);
+  const { url, apiKey } = useContext(MarvelContext);
 
   useEffect(() => {
-    axios
-      .get(
-        `https://gateway.marvel.com:443/v1/public/characters/${id}?ts=1&apikey=99a2c3abc5ca3fc0c9dca3d0cd75df4b&hash=4326bf879c56ff7c5240414e2ccd8e29`
-      )
-      .then((respone) => {
-        console.log(respone.data.data.results[0]);
-        setData(respone.data.data.results[0]);
-      });
-  }, []);
+    axios.get(`${url}${apiKey}`).then((respone) => {
+      console.log(respone.data.data.results[0]);
+      setData(respone.data.data.results[0]);
+    });
+  }, [apiKey, url]);
   return (
     <Layout>
-      <div>CharacterPage</div>
+      <div>
+        <div className="thumbnail">
+          <img
+            src={data?.thumbnail.path + "." + data?.thumbnail.extension}
+            alt="slika"
+          />
+          <h1>{data?.name}</h1>
+        </div>
+        <div>
+          <h1>DESCRIPTION:</h1>
+          <h1>{data?.description}</h1>
+          <h1>COMICS:</h1>
+        </div>
+      </div>
     </Layout>
   );
 };
