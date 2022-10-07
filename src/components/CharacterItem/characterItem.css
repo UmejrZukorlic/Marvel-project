@@ -1,0 +1,49 @@
+.card {
+  position: relative;
+  width: 300px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  transition: 0.2s;
+}
+.card p {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  margin: 0;
+  padding: 2px;
+
+  background-color: white;
+  border: 2px black solid;
+  transition: 0.2s;
+}
+.card .name {
+  transform: skew(10deg);
+}
+.seeMore {
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card:hover img {
+  transform: scale(1.1);
+}
+.card:hover .name {
+  transform: skew(0deg);
+}
+.card:hover .seeMore {
+  color: white;
+  visibility: visible;
+  background-color: rgba(254, 67, 67, 0.37);
+  transform: translate(-50%, -50%);
+}

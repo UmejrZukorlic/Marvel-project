@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Layout from "../Layout/layout";
 import { useContext } from "react";
-import { MarvelContext } from "../contex";
+import { MarvelContext } from "../context";
 import ComicsCard from "./ComicsCard";
 import "./characterPage.css";
 

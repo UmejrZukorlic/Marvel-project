@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { MarvelContext } from "../../contex";
+import { MarvelContext } from "../../context";
 
 const ComicsCard = (props) => {
   const { url } = props;

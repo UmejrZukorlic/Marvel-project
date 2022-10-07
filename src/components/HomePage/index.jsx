@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Layout from "../Layout/layout";
+import CharacterItem from "../CharacterItem";
+import "./homePage.css";
 const HomePage = () => {
   const [data, setData] = useState();
 
@@ -12,11 +14,24 @@ const HomePage = () => {
       .then((respone) => {
         console.log(respone.data);
         setData(respone.data);
+        console.log(respone.data.data.results);
+        setData(respone.data.data.results);
       });
   }, []);
   return (
     <Layout>
-      <div>HomePage</div>
+      <div className="homeSection">
+        {data?.map((el) => {
+          return (
+            <CharacterItem
+              key={el.id}
+              thumbnail={el.thumbnail.path + "." + el.thumbnail.extension}
+              name={el.name ? el.name : el.title}
+              id={el.resourceURI}
+            />
+          );
+        })}
+      </div>
     </Layout>
   );
 };

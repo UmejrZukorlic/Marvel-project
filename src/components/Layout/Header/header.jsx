@@ -3,13 +3,16 @@ import { TextInput, ActionIcon, useMantineTheme } from "@mantine/core";
 import { IconSearch, IconArrowRight, IconArrowLeft } from "@tabler/icons";
 
 import "./header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const theme = useMantineTheme();
   return (
     <div className="headerSection">
       <div className="headerLogo">
-        <h1>MARVEL</h1>
+        <Link to={"/"} className="logoLink">
+          <h1>MARVEL</h1>
+        </Link>
       </div>
       <ul className="headerNavigation">
         <li>Characters</li>

@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CharacterPage from "./components/CharacterPage";
 import HomePage from "./components/HomePage";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
@@ -7,7 +9,12 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <HomePage />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/article" element={<CharacterPage />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
