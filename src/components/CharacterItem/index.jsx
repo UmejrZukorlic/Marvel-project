@@ -1,8 +1,10 @@
 import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { MarvelContext } from "../context";
 import "./characterItem.css";
 const CharacterItem = (props) => {
-  const { thumbnail, name, id } = props;
+  const { thumbnail, name } = props;
   return (
     <div className="card">
       <img src={thumbnail} alt="slike" />

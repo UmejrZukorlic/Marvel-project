@@ -10,7 +10,6 @@
 }
 .headerSection .headerLogo .logoLink {
   text-decoration: none;
-  color: white;
 }
 .headerSection .headerLogo h1 {
   padding: 0 20px;
@@ -19,6 +18,7 @@
   letter-spacing: -2px;
   transform: scale(0.7, 1.6);
   background-color: red;
+  color: white;
 }
 .headerSection .headerNavigation {
   width: 50%;
