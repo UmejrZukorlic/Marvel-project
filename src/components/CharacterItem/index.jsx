@@ -15,7 +15,7 @@ const CharacterItem = (props) => {
         onClick={() => {
           setUrl(id);
         }}>
-        <p className="seeMore">See more..</p>
+        <p className="seeMore">See more...</p>
       </Link>
     </div>
   );
