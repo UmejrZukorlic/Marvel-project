@@ -19,4 +19,6 @@
 .characterPageSection .description {
   width: 90%;
   margin: auto;
+  margin-top: 10px;
+  border: 4px solid black;
 }

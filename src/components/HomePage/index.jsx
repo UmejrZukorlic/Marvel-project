@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import Layout from "../Layout/layout";
 import CharacterItem from "../CharacterItem";
 import "./homePage.css";
+import { MarvelContext } from "../context";
 const HomePage = () => {
   const [data, setData] = useState();
+  const { gnr, apiKey } = useContext(MarvelContext);
 
   useEffect(() => {
     axios
-      .get(
-        "https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=99a2c3abc5ca3fc0c9dca3d0cd75df4b&hash=4326bf879c56ff7c5240414e2ccd8e29"
-      )
+      .get(`https://gateway.marvel.com:443/v1/public/${gnr}${apiKey}`)
       .then((respone) => {
         console.log(respone.data);
         setData(respone.data);
         console.log(respone.data.data.results);
         setData(respone.data.data.results);
       });
-  }, []);
+  }, [gnr, apiKey]);
   return (
     <Layout>
       <div className="homeSection">

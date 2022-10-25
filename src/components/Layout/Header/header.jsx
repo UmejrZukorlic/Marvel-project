@@ -4,9 +4,12 @@ import { IconSearch, IconArrowRight, IconArrowLeft } from "@tabler/icons";
 
 import "./header.css";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { MarvelContext } from "../../context";
 
 const Header = () => {
   const theme = useMantineTheme();
+  const { gnr, setGnr } = useContext(MarvelContext);
   return (
     <div className="headerSection">
       <div className="headerLogo">
@@ -15,12 +18,31 @@ const Header = () => {
         </Link>
       </div>
       <ul className="headerNavigation">
-        <li>Characters</li>
-        <li>Comics</li>
-        <li>Creators</li>
-        <li>Events</li>
-        <li>Series</li>
-        <li>Stories</li>
+        <li
+          onClick={() => {
+            setGnr("characters");
+          }}>
+          Characters
+        </li>
+        <li
+          onClick={() => {
+            setGnr("comics");
+          }}>
+          Comics
+        </li>
+
+        <li
+          onClick={() => {
+            setGnr("events");
+          }}>
+          Events
+        </li>
+        <li
+          onClick={() => {
+            setGnr("series");
+          }}>
+          Series
+        </li>
       </ul>
       <div className="headerSearch">
         <TextInput

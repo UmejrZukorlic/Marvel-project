@@ -4,11 +4,13 @@ const MarvelContext = createContext();
 export { MarvelContext };
 const Context = (props) => {
   const apiKey =
-    "ts=1&api=99a2c3abc5ca3fc0c9dca3d0cd75df4b&hash=acb83bf2aa268c2c63a3e6eb1048f968";
+    "?ts=1&apikey=99a2c3abc5ca3fc0c9dca3d0cd75df4b&hash=4326bf879c56ff7c5240414e2ccd8e29";
   const [url, setUrl] = useState();
+  const [gnr, setGnr] = useState("characters");
   return (
-    <MarvelContext.Provider
-      value={{ url, setUrl, apiKey }}></MarvelContext.Provider>
+    <MarvelContext.Provider value={{ url, setUrl, apiKey, gnr, setGnr }}>
+      {props.children}
+    </MarvelContext.Provider>
   );
 };
 export default Context;
