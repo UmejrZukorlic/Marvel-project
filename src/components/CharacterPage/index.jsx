@@ -8,7 +8,7 @@ import "./characterPage.css";
 
 const CharacterPage = () => {
   const [data, setData] = useState();
-  const { url, setUrl, apiKey } = useContext(MarvelContext);
+  const { url, apiKey } = useContext(MarvelContext);
 
   useEffect(() => {
     axios.get(`${url}${apiKey}`).then((respone) => {
@@ -27,11 +27,11 @@ const CharacterPage = () => {
           <h1>{data?.name}</h1>
         </div>
         <div className="description">
-          <h1>DESCRIPTION:</h1>
+          <h1>DESCRIPTION: </h1>
           <h2>{data?.description}</h2>
         </div>
         <div className="comicsSection">
-          <h1>COMICS:</h1>
+          <h1>COMICS: </h1>
           {data?.comics.items.map((el) => {
             return <ComicsCard url={el.resourceURI} />;
           })}

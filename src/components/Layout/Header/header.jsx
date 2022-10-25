@@ -9,7 +9,7 @@ import { MarvelContext } from "../../context";
 
 const Header = () => {
   const theme = useMantineTheme();
-  const { gnr, setGnr } = useContext(MarvelContext);
+  const { setGnr } = useContext(MarvelContext);
   return (
     <div className="headerSection">
       <div className="headerLogo">
