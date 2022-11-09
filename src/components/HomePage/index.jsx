@@ -20,7 +20,7 @@ const HomePage = () => {
   }, [gnr, apiKey]);
   return (
     <Layout>
-      <div className="homeSection">
+      <div className="homeSection nesto">
         {data?.map((el) => {
           return (
             <CharacterItem
