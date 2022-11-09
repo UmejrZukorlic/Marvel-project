@@ -34,3 +34,7 @@
 .headerSection .headerNavigation li:hover {
   background-color: rgb(46, 46, 46);
 }
+.headerNavigation li .genreLink {
+  text-decoration: none;
+  color: white;
+}

@@ -3,8 +3,8 @@ import axios from "axios";
 import { MarvelContext } from "../../context";
 
 const ComicsCard = (props) => {
-  const { url } = props;
-  const { apiKey } = useContext(MarvelContext);
+  const { url, details } = props;
+  const { setUrl, apiKey } = useContext(MarvelContext);
   const [data, setData] = useState();
   useEffect(() => {
     axios.get(`${url}${apiKey}`).then((respone) => {
@@ -19,6 +19,13 @@ const ComicsCard = (props) => {
         alt=""
       />
       <h1>{data?.title}</h1>
+
+      <h2
+        onClick={() => {
+          setUrl(details);
+        }}>
+        Details...
+      </h2>
     </div>
   );
 };

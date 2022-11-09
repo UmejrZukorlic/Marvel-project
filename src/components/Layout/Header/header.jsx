@@ -22,26 +22,34 @@ const Header = () => {
           onClick={() => {
             setGnr("characters");
           }}>
-          Characters
+          <Link to="/" className="genreLink">
+            Characters
+          </Link>
         </li>
         <li
           onClick={() => {
             setGnr("comics");
           }}>
-          Comics
+          <Link to="/" className="genreLink">
+            Comics
+          </Link>
         </li>
 
         <li
           onClick={() => {
             setGnr("events");
           }}>
-          Events
+          <Link to="/" className="genreLink">
+            Events
+          </Link>
         </li>
         <li
           onClick={() => {
             setGnr("series");
           }}>
-          Series
+          <Link to="/" className="genreLink">
+            Series
+          </Link>
         </li>
       </ul>
       <div className="headerSearch">

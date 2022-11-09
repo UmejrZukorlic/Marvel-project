@@ -24,7 +24,10 @@ const CharacterPage = () => {
             src={data?.thumbnail.path + "." + data?.thumbnail.extension}
             alt="slika"
           />
-          <h1>{data?.name}</h1>
+          <h1>
+            {data?.name}
+            {data?.title}
+          </h1>
         </div>
         <div className="description">
           <h1>DESCRIPTION: </h1>
@@ -32,8 +35,8 @@ const CharacterPage = () => {
         </div>
         <div className="comicsSection">
           <h1>COMICS: </h1>
-          {data?.comics.items.map((el) => {
-            return <ComicsCard url={el.resourceURI} />;
+          {data?.comics?.items?.map((el) => {
+            return <ComicsCard url={el.resourceURI} details={el.resourceURI} />;
           })}
         </div>
       </div>
