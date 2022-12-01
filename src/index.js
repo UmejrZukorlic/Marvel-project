@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { NotFoundTitle } from "./components/404Page";
 import CharacterPage from "./components/CharacterPage";
 import Context from "./components/context";
 import HomePage from "./components/HomePage";
@@ -15,6 +16,7 @@ root.render(
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/article" element={<CharacterPage />} />
+          <Route path="*" element={<NotFoundTitle/>}/>
         </Routes>
       </Context>
     </BrowserRouter>
