@@ -33,8 +33,8 @@ const CharacterPage = () => {
           <h1>DESCRIPTION: </h1>
           <h2>{data?.description}</h2>
         </div>
+        <h1 className="comicsTitle">COMICS: </h1>
         <div className="comicsSection">
-          <h1>COMICS: </h1>
           {data?.comics?.items?.map((el) => {
             return <ComicsCard url={el.resourceURI} details={el.resourceURI} />;
           })}
