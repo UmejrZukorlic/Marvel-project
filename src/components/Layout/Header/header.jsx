@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { TextInput, ActionIcon, useMantineTheme } from "@mantine/core";
 import { IconSearch, IconArrowRight, IconArrowLeft } from "@tabler/icons";
 
@@ -9,7 +9,8 @@ import { MarvelContext } from "../../context";
 
 const Header = () => {
   const theme = useMantineTheme();
-  const { setGnr } = useContext(MarvelContext);
+  const { setGnr, search, setSearch } = useContext(MarvelContext);
+  const [input, setInput] = useState("");
   return (
     <div className="headerSection">
       <div className="headerLogo">
@@ -58,7 +59,15 @@ const Header = () => {
           radius="xl"
           size="md"
           rightSection={
-            <ActionIcon size={32} radius="xl" color="red" variant="filled">
+            <ActionIcon
+              size={32}
+              radius="xl"
+              color="red"
+              variant="filled"
+              onClick={() => {
+                setSearch(input);
+                console.log(input);
+              }}>
               {theme.dir === "ltr" ? (
                 <IconArrowRight size={18} stroke={1.5} />
               ) : (
@@ -68,6 +77,9 @@ const Header = () => {
           }
           placeholder="Search"
           rightSectionWidth={42}
+          onChange={(e) => {
+            setInput(e.target.value);
+          }}
         />
       </div>
     </div>
