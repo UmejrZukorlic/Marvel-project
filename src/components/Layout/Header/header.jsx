@@ -9,7 +9,7 @@ import { MarvelContext } from "../../context";
 
 const Header = () => {
   const theme = useMantineTheme();
-  const { setGnr, search, setSearch } = useContext(MarvelContext);
+  const { setGnr, setSearch } = useContext(MarvelContext);
   const [input, setInput] = useState("");
   return (
     <div className="headerSection">
@@ -78,7 +78,7 @@ const Header = () => {
           placeholder="Search"
           rightSectionWidth={42}
           onChange={(e) => {
-            setInput(e.target.value);
+            setInput("?name=" + e.target.value);
           }}
         />
       </div>

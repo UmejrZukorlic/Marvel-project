@@ -6,18 +6,22 @@ import "./homePage.css";
 import { MarvelContext } from "../context";
 const HomePage = () => {
   const [data, setData] = useState();
-  const { gnr, apiKey } = useContext(MarvelContext);
+  const { gnr, apiKey, search } = useContext(MarvelContext);
 
   useEffect(() => {
     axios
-      .get(`https://gateway.marvel.com:443/v1/public/${gnr}${apiKey}`)
+      .get(
+        `https://gateway.marvel.com:443/v1/public/${gnr}${
+          search ? search + "&" + apiKey : "?" + apiKey
+        }`
+      )
       .then((respone) => {
         console.log(respone.data);
         setData(respone.data);
         console.log(respone.data.data.results);
         setData(respone.data.data.results);
       });
-  }, [gnr, apiKey]);
+  }, [gnr, apiKey, search]);
   return (
     <Layout>
       <div className="homeSection nesto">
