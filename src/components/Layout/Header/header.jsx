@@ -14,7 +14,13 @@ const Header = () => {
   return (
     <div className="headerSection">
       <div className="headerLogo">
-        <Link to={"/"} className="logoLink">
+        <Link
+          to={"/"}
+          className="logoLink"
+          onClick={() => {
+            setSearch();
+            setLoading(false);
+          }}>
           <h1>MARVEL</h1>
         </Link>
       </div>
@@ -22,6 +28,7 @@ const Header = () => {
         <li
           onClick={() => {
             setGnr("characters");
+            setSearch();
             setLoading(false);
           }}>
           <Link to="/" className="genreLink">
@@ -31,6 +38,7 @@ const Header = () => {
         <li
           onClick={() => {
             setGnr("comics");
+            setSearch();
             setLoading(false);
           }}>
           <Link to="/" className="genreLink">
@@ -41,6 +49,7 @@ const Header = () => {
         <li
           onClick={() => {
             setGnr("events");
+            setSearch();
             setLoading(false);
           }}>
           <Link to="/" className="genreLink">
@@ -50,6 +59,7 @@ const Header = () => {
         <li
           onClick={() => {
             setGnr("series");
+            setSearch();
             setLoading(false);
           }}>
           <Link to="/" className="genreLink">
