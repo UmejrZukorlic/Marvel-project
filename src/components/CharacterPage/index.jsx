@@ -36,7 +36,9 @@ const CharacterPage = () => {
         <h1 className="comicsTitle">COMICS: </h1>
         <div className="comicsSection">
           {data?.comics?.items?.map((el) => {
-            return <ComicsCard url={el.resourceURI} details={el.resourceURI} />;
+            return (
+              <ComicsCard url={el.resourceURI + "?"} details={el.resourceURI} />
+            );
           })}
         </div>
       </div>

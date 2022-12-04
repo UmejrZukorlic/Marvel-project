@@ -9,7 +9,7 @@ import { MarvelContext } from "../../context";
 
 const Header = () => {
   const theme = useMantineTheme();
-  const { setGnr, setSearch } = useContext(MarvelContext);
+  const { setGnr, setSearch, setLoading } = useContext(MarvelContext);
   const [input, setInput] = useState("");
   return (
     <div className="headerSection">
@@ -22,6 +22,7 @@ const Header = () => {
         <li
           onClick={() => {
             setGnr("characters");
+            setLoading(false);
           }}>
           <Link to="/" className="genreLink">
             Characters
@@ -30,6 +31,7 @@ const Header = () => {
         <li
           onClick={() => {
             setGnr("comics");
+            setLoading(false);
           }}>
           <Link to="/" className="genreLink">
             Comics
@@ -39,6 +41,7 @@ const Header = () => {
         <li
           onClick={() => {
             setGnr("events");
+            setLoading(false);
           }}>
           <Link to="/" className="genreLink">
             Events
@@ -47,6 +50,7 @@ const Header = () => {
         <li
           onClick={() => {
             setGnr("series");
+            setLoading(false);
           }}>
           <Link to="/" className="genreLink">
             Series
@@ -66,6 +70,7 @@ const Header = () => {
               variant="filled"
               onClick={() => {
                 setSearch(input);
+                setLoading(false);
                 console.log(input);
               }}>
               {theme.dir === "ltr" ? (

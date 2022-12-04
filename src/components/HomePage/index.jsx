@@ -1,13 +1,17 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
+import { Loader } from "@mantine/core";
+
 import Layout from "../Layout/layout";
 import CharacterItem from "../CharacterItem";
-import "./homePage.css";
+
 import { MarvelContext } from "../context";
-import Demo from "../LoadingPage";
+import "./homePage.css";
+
 const HomePage = () => {
   const [data, setData] = useState();
-  const { gnr, apiKey, search } = useContext(MarvelContext);
+  const { gnr, apiKey, search, loading, setLoading } =
+    useContext(MarvelContext);
 
   useEffect(() => {
     axios
@@ -19,24 +23,30 @@ const HomePage = () => {
       .then((respone) => {
         console.log(respone.data.data.results);
         setData(respone.data.data.results);
+        setLoading(true);
       });
-  }, [gnr, apiKey, search]);
+  }, [gnr, apiKey, search, setLoading, loading]);
   return (
-    <Layout>
-      <Demo />
-      <div className="homeSection nesto">
-        {data?.map((el) => {
-          return (
-            <CharacterItem
-              key={el.id}
-              thumbnail={el.thumbnail.path + "." + el.thumbnail.extension}
-              name={el.name ? el.name : el.title}
-              id={el.resourceURI}
-            />
-          );
-        })}
-      </div>
-    </Layout>
+    <>
+      {!loading ? (
+        <Loader color="red" className="loader" variant="bars" />
+      ) : (
+        <Layout>
+          <div className="homeSection nesto">
+            {data?.map((el) => {
+              return (
+                <CharacterItem
+                  key={el.id}
+                  thumbnail={el.thumbnail.path + "." + el.thumbnail.extension}
+                  name={el.name ? el.name : el.title}
+                  id={el.resourceURI + "?"}
+                />
+              );
+            })}
+          </div>
+        </Layout>
+      )}
+    </>
   );
 };
 

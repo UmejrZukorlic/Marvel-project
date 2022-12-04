@@ -8,9 +8,21 @@ const Context = (props) => {
   const [url, setUrl] = useState();
   const [gnr, setGnr] = useState("characters");
   const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(false);
+
   return (
     <MarvelContext.Provider
-      value={{ url, setUrl, apiKey, gnr, setGnr, search, setSearch }}>
+      value={{
+        url,
+        setUrl,
+        apiKey,
+        gnr,
+        setGnr,
+        search,
+        setSearch,
+        loading,
+        setLoading,
+      }}>
       {props.children}
     </MarvelContext.Provider>
   );
