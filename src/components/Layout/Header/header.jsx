@@ -3,7 +3,7 @@ import { TextInput, ActionIcon, useMantineTheme } from "@mantine/core";
 import { IconSearch, IconArrowRight, IconArrowLeft } from "@tabler/icons";
 
 import "./header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { MarvelContext } from "../../context";
 
@@ -11,6 +11,7 @@ const Header = () => {
   const theme = useMantineTheme();
   const { setGnr, setSearch, setLoading } = useContext(MarvelContext);
   const [input, setInput] = useState("");
+  const navigate = useNavigate();
   return (
     <div className="headerSection">
       <div className="headerLogo">
@@ -82,6 +83,7 @@ const Header = () => {
                 setSearch(input);
                 setLoading(false);
                 console.log(input);
+                navigate("/");
               }}>
               {theme.dir === "ltr" ? (
                 <IconArrowRight size={18} stroke={1.5} />
