@@ -5,7 +5,7 @@ import { MarvelContext } from "../context";
 import "./characterItem.css";
 const CharacterItem = (props) => {
   const { thumbnail, name, id } = props;
-  const { setUrl } = useContext(MarvelContext);
+  const { setUrl, setLoading } = useContext(MarvelContext);
   return (
     <div className="card">
       <img src={thumbnail} alt="slike" />
@@ -13,6 +13,7 @@ const CharacterItem = (props) => {
       <Link
         to={"/article"}
         onClick={() => {
+          setLoading(false);
           setUrl(id);
         }}>
         <p className="seeMore">See more...</p>

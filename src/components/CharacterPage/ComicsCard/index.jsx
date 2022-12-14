@@ -3,7 +3,7 @@ import axios from "axios";
 import { MarvelContext } from "../../context";
 
 const ComicsCard = (props) => {
-  const { url, details } = props;
+  const { url } = props;
   const { setUrl, apiKey } = useContext(MarvelContext);
   const [data, setData] = useState();
   useEffect(() => {

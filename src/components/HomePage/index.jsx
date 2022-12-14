@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
-import { Loader } from "@mantine/core";
 
 import Layout from "../Layout/layout";
 import CharacterItem from "../CharacterItem";
 
 import { MarvelContext } from "../context";
 import "./homePage.css";
+import Loading from "../Loader";
 
 const HomePage = () => {
   const [data, setData] = useState();
@@ -29,7 +29,7 @@ const HomePage = () => {
   return (
     <>
       {!loading ? (
-        <Loader color="red" className="loader" variant="bars" />
+        <Loading />
       ) : (
         <Layout>
           <div className="homeSection nesto">
