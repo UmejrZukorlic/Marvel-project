@@ -22,7 +22,7 @@ const ComicsCard = (props) => {
 
       <h2
         onClick={() => {
-          setUrl(details);
+          setUrl(url);
         }}>
         Details...
       </h2>
