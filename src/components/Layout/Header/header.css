@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .headerSection {
   width: 100%;
 
@@ -44,20 +47,16 @@
   display: none;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 880px) {
   .headerSection {
     justify-content: space-between;
-    padding-inline: 10px;
+    padding: 0 20px;
   }
   .hamburgerMenu {
     display: block;
     justify-self: flex-end;
   }
-  .navigation {
-    display: none;
-  }
-  .headerNavigation,
-  .headerNavigation li,
+  .navigation,
   .headerSearch {
     display: none;
   }
@@ -71,7 +70,7 @@
   label span {
     background: #fff;
     border-radius: 10px;
-    height: 7px;
+    height: 6px;
     margin: 7px 0;
     transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
   }
