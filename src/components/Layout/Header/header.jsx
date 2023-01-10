@@ -25,49 +25,59 @@ const Header = () => {
           <h1>MARVEL</h1>
         </Link>
       </div>
-      <ul className="headerNavigation">
-        <li
-          onClick={() => {
-            setGnr("characters");
-            setSearch();
-            setLoading(false);
-          }}>
-          <Link to="/" className="genreLink">
-            Characters
-          </Link>
-        </li>
-        <li
-          onClick={() => {
-            setGnr("comics");
-            setSearch();
-            setLoading(false);
-          }}>
-          <Link to="/" className="genreLink">
-            Comics
-          </Link>
-        </li>
+      <div className="hamburgerMenu">
+        <label>
+          <input type="checkbox" id="check" />
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+      <div className="navigation">
+        <ul className="headerNavigation">
+          <li
+            onClick={() => {
+              setGnr("characters");
+              setSearch();
+              setLoading(false);
+            }}>
+            <Link to="/" className="genreLink">
+              Characters
+            </Link>
+          </li>
+          <li
+            onClick={() => {
+              setGnr("comics");
+              setSearch();
+              setLoading(false);
+            }}>
+            <Link to="/" className="genreLink">
+              Comics
+            </Link>
+          </li>
 
-        <li
-          onClick={() => {
-            setGnr("events");
-            setSearch();
-            setLoading(false);
-          }}>
-          <Link to="/" className="genreLink">
-            Events
-          </Link>
-        </li>
-        <li
-          onClick={() => {
-            setGnr("series");
-            setSearch();
-            setLoading(false);
-          }}>
-          <Link to="/" className="genreLink">
-            Series
-          </Link>
-        </li>
-      </ul>
+          <li
+            onClick={() => {
+              setGnr("events");
+              setSearch();
+              setLoading(false);
+            }}>
+            <Link to="/" className="genreLink">
+              Events
+            </Link>
+          </li>
+          <li
+            onClick={() => {
+              setGnr("series");
+              setSearch();
+              setLoading(false);
+            }}>
+            <Link to="/" className="genreLink">
+              Series
+            </Link>
+          </li>
+        </ul>
+      </div>
       <div className="headerSearch">
         <TextInput
           icon={<IconSearch size={18} stroke={1.5} />}
