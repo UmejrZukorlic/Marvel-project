@@ -2,8 +2,9 @@
   width: 90%;
   margin: 20px auto;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  row-gap: 10px;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
 }
 .loader {
   background-color: rgb(36, 23, 23);
