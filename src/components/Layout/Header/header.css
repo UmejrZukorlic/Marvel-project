@@ -3,7 +3,7 @@
 }
 .headerSection {
   width: 100%;
-
+  position: relative;
   background-color: rgb(32, 10, 10);
   color: white;
 
@@ -24,9 +24,13 @@
   color: white;
 }
 .navigation {
-  width: 50%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .headerNavigation {
+  width: 70%;
   display: flex;
   justify-content: space-evenly;
   list-style-type: none;
@@ -56,8 +60,28 @@
     display: block;
     justify-self: flex-end;
   }
-  .navigationOff,
-  .headerSearch {
+  .navigation {
+    width: 100%;
+    background-color: rgb(32, 10, 10);
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 5;
+    padding-bottom: 10px;
+  }
+  .navigation .headerNavigation {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .headerNavigation li {
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgb(129, 101, 101);
+  }
+  .navigationOff {
     display: none;
   }
   label {

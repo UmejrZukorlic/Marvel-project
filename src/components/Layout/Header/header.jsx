@@ -71,37 +71,37 @@ const Header = () => {
             </Link>
           </li>
         </ul>
-      </div>
-      <div className="headerSearch">
-        <TextInput
-          icon={<IconSearch size={18} stroke={1.5} />}
-          radius="xl"
-          size="md"
-          rightSection={
-            <ActionIcon
-              size={32}
-              radius="xl"
-              color="red"
-              variant="filled"
-              onClick={() => {
-                setSearch(input);
-                setLoading(false);
-                console.log(input);
-                navigate("/");
-              }}>
-              {theme.dir === "ltr" ? (
-                <IconArrowRight size={18} stroke={1.5} />
-              ) : (
-                <IconArrowLeft size={18} stroke={1.5} />
-              )}
-            </ActionIcon>
-          }
-          placeholder="Search"
-          rightSectionWidth={42}
-          onChange={(e) => {
-            setInput("?name=" + e.target.value);
-          }}
-        />
+        <div className="headerSearch">
+          <TextInput
+            icon={<IconSearch size={18} stroke={1.5} />}
+            radius="xl"
+            size="md"
+            rightSection={
+              <ActionIcon
+                size={32}
+                radius="xl"
+                color="red"
+                variant="filled"
+                onClick={() => {
+                  setSearch(input);
+                  setLoading(false);
+                  console.log(input);
+                  navigate("/");
+                }}>
+                {theme.dir === "ltr" ? (
+                  <IconArrowRight size={18} stroke={1.5} />
+                ) : (
+                  <IconArrowLeft size={18} stroke={1.5} />
+                )}
+              </ActionIcon>
+            }
+            placeholder="Search"
+            rightSectionWidth={42}
+            onChange={(e) => {
+              setInput("?name=" + e.target.value);
+            }}
+          />
+        </div>
       </div>
       <div className="hamburgerMenu">
         <label>
