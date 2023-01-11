@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 .headerSection {
-  width: 100%;
   position: relative;
   background-color: rgb(32, 10, 10);
   color: white;
