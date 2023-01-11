@@ -56,7 +56,7 @@
     display: block;
     justify-self: flex-end;
   }
-  .navigation,
+  .navigationOff,
   .headerSearch {
     display: none;
   }

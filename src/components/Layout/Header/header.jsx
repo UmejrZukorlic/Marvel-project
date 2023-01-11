@@ -11,6 +11,7 @@ const Header = () => {
   const theme = useMantineTheme();
   const { setGnr, setSearch, setLoading } = useContext(MarvelContext);
   const [input, setInput] = useState("");
+  const [ham, setHam] = useState(false);
   const navigate = useNavigate();
   return (
     <div className="headerSection">
@@ -25,15 +26,8 @@ const Header = () => {
           <h1>MARVEL</h1>
         </Link>
       </div>
-      <div className="hamburgerMenu">
-        <label>
-          <input type="checkbox" id="check" />
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-      </div>
-      <div className="navigation">
+
+      <div className={`navigation ${!ham ? "navigationOff" : "navigationOn"}`}>
         <ul className="headerNavigation">
           <li
             onClick={() => {
@@ -108,6 +102,20 @@ const Header = () => {
             setInput("?name=" + e.target.value);
           }}
         />
+      </div>
+      <div className="hamburgerMenu">
+        <label>
+          <input
+            type="checkbox"
+            id="check"
+            onChange={(e) => {
+              setHam(e.target.checked);
+            }}
+          />
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
       </div>
     </div>
   );
