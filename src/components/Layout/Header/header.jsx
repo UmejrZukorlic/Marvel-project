@@ -34,6 +34,7 @@ const Header = () => {
               setGnr("characters");
               setSearch();
               setLoading(false);
+              navigate("/");
             }}>
             <Link to="/" className="genreLink">
               Characters
@@ -44,6 +45,7 @@ const Header = () => {
               setGnr("comics");
               setSearch();
               setLoading(false);
+              navigate("/");
             }}>
             <Link to="/" className="genreLink">
               Comics
@@ -55,6 +57,7 @@ const Header = () => {
               setGnr("events");
               setSearch();
               setLoading(false);
+              navigate("/");
             }}>
             <Link to="/" className="genreLink">
               Events
@@ -65,6 +68,7 @@ const Header = () => {
               setGnr("series");
               setSearch();
               setLoading(false);
+              navigate("/");
             }}>
             <Link to="/" className="genreLink">
               Series
