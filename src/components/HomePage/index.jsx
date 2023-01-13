@@ -43,6 +43,9 @@ const HomePage = () => {
                 />
               );
             })}
+            {data.length === 0 ? (
+              <h1>There is no marvel with this name</h1>
+            ) : null}
           </div>
         </Layout>
       )}

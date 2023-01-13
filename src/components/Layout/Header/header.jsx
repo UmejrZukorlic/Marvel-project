@@ -36,9 +36,7 @@ const Header = () => {
               setLoading(false);
               navigate("/");
             }}>
-            <Link to="/" className="genreLink">
-              Characters
-            </Link>
+            Characters
           </li>
           <li
             onClick={() => {
@@ -47,9 +45,7 @@ const Header = () => {
               setLoading(false);
               navigate("/");
             }}>
-            <Link to="/" className="genreLink">
-              Comics
-            </Link>
+            Comics
           </li>
 
           <li
@@ -59,9 +55,7 @@ const Header = () => {
               setLoading(false);
               navigate("/");
             }}>
-            <Link to="/" className="genreLink">
-              Events
-            </Link>
+            Events
           </li>
           <li
             onClick={() => {
@@ -70,9 +64,7 @@ const Header = () => {
               setLoading(false);
               navigate("/");
             }}>
-            <Link to="/" className="genreLink">
-              Series
-            </Link>
+            Series
           </li>
         </ul>
         <div className="headerSearch">
