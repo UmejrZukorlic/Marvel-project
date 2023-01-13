@@ -53,7 +53,7 @@ export function NotFoundTitle() {
   const navigate = useNavigate();
 
   return (
-    <Layout>
+    <>
       <Container className={classes.root}>
         <div className={classes.label}>404</div>
         <Title className={classes.title}>You have found a secret place.</Title>
@@ -77,6 +77,6 @@ export function NotFoundTitle() {
           </Button>
         </Group>
       </Container>
-    </Layout>
+    </>
   );
 }
