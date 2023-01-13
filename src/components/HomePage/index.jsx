@@ -44,7 +44,7 @@ const HomePage = () => {
               );
             })}
             {data.length === 0 ? (
-              <div>
+              <div className="notExisted">
                 <h1>There is no marvel with this name</h1>
                 <button
                   onClick={() => {

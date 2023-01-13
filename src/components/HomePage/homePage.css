@@ -69,3 +69,31 @@
     transform: translate(24px, 0);
   }
 }
+.notExisted {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.notExisted h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 4rem;
+  color: rgb(32, 10, 10);
+}
+.notExisted button {
+  width: 20%;
+  height: 4rem;
+  border: 0;
+  border-radius: 20px;
+  background-color: rgb(159, 0, 0);
+  color: rgb(255, 231, 231);
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: 0.2s;
+}
+.notExisted button:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(114, 0, 0);
+}
