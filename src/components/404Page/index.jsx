@@ -6,7 +6,6 @@ import {
   Container,
   Group,
 } from "@mantine/core";
-import Layout from "../Layout/layout";
 import { useNavigate } from "react-router-dom";
 
 const useStyles = createStyles((theme) => ({
