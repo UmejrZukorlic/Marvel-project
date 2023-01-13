@@ -10,7 +10,7 @@ import Loading from "../Loader";
 
 const HomePage = () => {
   const [data, setData] = useState();
-  const { gnr, apiKey, search, loading, setLoading } =
+  const { gnr, apiKey, search, setSearch, loading, setLoading } =
     useContext(MarvelContext);
 
   useEffect(() => {
@@ -44,7 +44,16 @@ const HomePage = () => {
               );
             })}
             {data.length === 0 ? (
-              <h1>There is no marvel with this name</h1>
+              <div>
+                <h1>There is no marvel with this name</h1>
+                <button
+                  onClick={() => {
+                    setSearch("");
+                    setLoading(false);
+                  }}>
+                  GET BACK
+                </button>
+              </div>
             ) : null}
           </div>
         </Layout>
