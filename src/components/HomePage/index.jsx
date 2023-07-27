@@ -21,7 +21,7 @@ const HomePage = () => {
         }`
       )
       .then((respone) => {
-        console.log(respone.data.data.results);
+        console.log(respone.data.data);
         setData(respone.data.data.results);
         setLoading(true);
       });
@@ -39,7 +39,7 @@ const HomePage = () => {
                   key={el.id}
                   thumbnail={el.thumbnail.path + "." + el.thumbnail.extension}
                   name={el.name ? el.name : el.title}
-                  id={el.resourceURI + "?"}
+                  id={el.resourceURI.replace("http://", "https://") + "?"}
                 />
               );
             })}
