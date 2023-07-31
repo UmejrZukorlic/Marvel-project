@@ -8,14 +8,15 @@ const CharacterItem = (props) => {
   const { setUrl, setLoading } = useContext(MarvelContext);
   return (
     <div className="card">
-      <img src={thumbnail} alt="slike" />
-      <p className="name">{name}</p>
       <Link
         to={"/article"}
         onClick={() => {
           setLoading(false);
           setUrl(id);
         }}>
+        <img src={thumbnail} alt="slike" />
+        <p className="name">{name}</p>
+
         <p className="seeMore">See more...</p>
       </Link>
     </div>

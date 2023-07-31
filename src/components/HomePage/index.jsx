@@ -9,11 +9,13 @@ import "./homePage.css";
 import Loading from "../Loader";
 
 const HomePage = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   const { gnr, apiKey, search, setSearch, loading, setLoading } =
     useContext(MarvelContext);
+  console.log(gnr);
 
   useEffect(() => {
+    setLoading(false);
     axios
       .get(
         `https://gateway.marvel.com:443/v1/public/${gnr}${
@@ -25,7 +27,7 @@ const HomePage = () => {
         setData(respone.data.data.results);
         setLoading(true);
       });
-  }, [gnr, apiKey, search, setLoading, loading]);
+  }, [gnr, apiKey, search, setLoading]);
   return (
     <>
       {!loading ? (

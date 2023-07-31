@@ -13,7 +13,10 @@ const ComicsCard = (props) => {
     });
   }, [apiKey, url]);
   return (
-    <div>
+    <div
+      onClick={() => {
+        setUrl(url);
+      }}>
       <img
         src={data?.thumbnail.path + "." + data?.thumbnail.extension}
         alt=""
