@@ -10,7 +10,7 @@ import Loading from "../Loader";
 
 const HomePage = () => {
   const [data, setData] = useState([]);
-  const { gnr, apiKey, search, setSearch, loading, setLoading, darkMode } =
+  const { gnr, apiKey, search, setSearch, loading, setLoading } =
     useContext(MarvelContext);
   console.log(gnr);
 

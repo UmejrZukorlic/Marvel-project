@@ -9,7 +9,6 @@ const Context = (props) => {
   const [gnr, setGnr] = useState("characters");
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
-  const [darkMode, setDarkMode] = useState("dark");
 
   return (
     <MarvelContext.Provider
@@ -23,8 +22,6 @@ const Context = (props) => {
         setSearch,
         loading,
         setLoading,
-        darkMode,
-        setDarkMode,
       }}>
       {props.children}
     </MarvelContext.Provider>
